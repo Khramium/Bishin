@@ -34,8 +34,9 @@ func pick_random_target():
 	var choose = randi() & 2 # lookup later, web code
 	var spot = path_node
 	if leaving == true:
+		perching = false
 		spot = leave_node
-	if choose != 2:
+	elif choose != 2:
 		perching = true
 		var perch_path: Path2D = tree.get_perch_spots()
 		spot = perch_path
@@ -63,6 +64,7 @@ func _pick_smarter_target(stuck_dir):
 	var curve = path_node.curve
 	var length = curve.get_baked_length()
 	flying = true
+	doing = "Re-Routing"
 	for i in range(10):
 		var offset = randf() * length
 		var candidate = curve.sample_baked(offset)
