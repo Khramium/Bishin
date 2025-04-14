@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=3 uid="uid://c0jr85847n0dy"]
+
+[ext_resource type="Script" uid="uid://ceoxklriqdxx4" path="res://Enviroment Assets/wave.gd" id="1_72a1c"]
+[ext_resource type="Texture2D" uid="uid://bnoaulb26syt8" path="res://FishAssets/Waves/Waves1.png" id="2_2u1fv"]
+[ext_resource type="Texture2D" uid="uid://svx5qhxxkm41" path="res://FishAssets/Waves/Waves2.png" id="3_pljj3"]
+[ext_resource type="Texture2D" uid="uid://dvk8ty16ae6pf" path="res://FishAssets/Waves/Waves3.png" id="4_sk45t"]
+[ext_resource type="Texture2D" uid="uid://cqwqttmuu81v7" path="res://FishAssets/Waves/Waves4.png" id="5_a06bk"]
+[ext_resource type="Texture2D" uid="uid://c24hs0hmleyby" path="res://FishAssets/Waves/Waves5.png" id="6_euju1"]
+[ext_resource type="Texture2D" uid="uid://yw4glehoe2is" path="res://FishAssets/Waves/Waves6.png" id="7_a6x4c"]
+[ext_resource type="Texture2D" uid="uid://1yr2pnigfsnv" path="res://FishAssets/Waves/Waves7.png" id="8_0ulpc"]
+[ext_resource type="Texture2D" uid="uid://bpai2xeineg1u" path="res://FishAssets/Waves/Waves8.png" id="9_8vngy"]
+[ext_resource type="Texture2D" uid="uid://372rf72g0ssk" path="res://FishAssets/Waves/Waves9.png" id="10_405y1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ynjy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2u1fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pljj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sk45t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a06bk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_euju1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a6x4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0ulpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8vngy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_405y1")
+}],
+"loop": true,
+"name": &"waves",
+"speed": 10.0
+}]
+
+[node name="Wave" type="CharacterBody2D"]
+script = ExtResource("1_72a1c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_8ynjy")
+animation = &"waves"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

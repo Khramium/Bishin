@@ -1,0 +1,75 @@
+[gd_scene load_steps=15 format=3 uid="uid://c7ikm3g788h51"]
+
+[ext_resource type="Texture2D" uid="uid://bs0unmh7w64vq" path="res://FishAssets/JunkAssets + Player/BirdBits/grass1.png" id="1_s1pgd"]
+[ext_resource type="Texture2D" uid="uid://b06ja3e000ot2" path="res://FishAssets/JunkAssets + Player/BirdBits/grass2.png" id="2_ds0tr"]
+[ext_resource type="Texture2D" uid="uid://7hsyaqs8e2qu" path="res://FishAssets/JunkAssets + Player/BirdBits/grass3.png" id="3_qnqba"]
+[ext_resource type="Texture2D" uid="uid://bupcge0aj1nx8" path="res://FishAssets/JunkAssets + Player/BirdBits/grass4.png" id="4_xijl3"]
+[ext_resource type="Texture2D" uid="uid://bjxs2kfg7gj17" path="res://FishAssets/JunkAssets + Player/BirdBits/grass5.png" id="5_7hxu4"]
+[ext_resource type="Texture2D" uid="uid://d2i1ahjw16yd3" path="res://FishAssets/JunkAssets + Player/BirdBits/grass6.png" id="6_fiwbq"]
+[ext_resource type="Texture2D" uid="uid://g1rv2g8v681x" path="res://FishAssets/JunkAssets + Player/BirdBits/grass7.png" id="7_8mvmv"]
+[ext_resource type="Texture2D" uid="uid://cchbcujqu7oox" path="res://FishAssets/JunkAssets + Player/BirdBits/grass8.png" id="8_w8mla"]
+[ext_resource type="Texture2D" uid="uid://b3ilvxe06asfj" path="res://FishAssets/JunkAssets + Player/BirdBits/grass9.png" id="9_wlk5x"]
+[ext_resource type="Texture2D" uid="uid://bsxsgiiv7dxqj" path="res://FishAssets/JunkAssets + Player/BirdBits/grass10.png" id="10_upxfq"]
+[ext_resource type="Texture2D" uid="uid://bfuaxpv06wrk8" path="res://FishAssets/JunkAssets + Player/BirdBits/grass11.png" id="11_f5cj1"]
+[ext_resource type="Script" uid="uid://dlht673ifvkat" path="res://Scripts/grass_logic.gd" id="12_73bm1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_voc14"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s1pgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ds0tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qnqba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xijl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7hxu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fiwbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8mvmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w8mla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wlk5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_upxfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_f5cj1")
+}],
+"loop": true,
+"name": &"grass",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1pgd"]
+radius = 13.0
+height = 28.0
+
+[node name="Grass" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -2
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_voc14")
+animation = &"grass"
+frame_progress = 0.677447
+script = ExtResource("12_73bm1")
+
+[node name="GrassBod" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, 2)
+shape = SubResource("CapsuleShape2D_s1pgd")
+disabled = true

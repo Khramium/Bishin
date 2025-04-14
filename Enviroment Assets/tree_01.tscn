@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7kvq6octmb3s"]
+
+[ext_resource type="Texture2D" uid="uid://cvd8ikcfq1db3" path="res://FishAssets/JunkAssets + Player/Tree01.png" id="1_f3ydu"]
+[ext_resource type="Texture2D" uid="uid://370gp0aesjv1" path="res://FishAssets/JunkAssets + Player/TreeShadow.png" id="2_mclgp"]
+
+[sub_resource type="Curve2D" id="Curve2D_mclgp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 41, -52, 0, 0, 0, 0, 12, -63, 0, 0, 0, 0, 11, -79, 0, 0, 0, 0, -1, -89, 0, 0, 0, 0, -13, -81, 0, 0, 0, 0, -21, -77, 0, 0, 0, 0, -18, -70, 0, 0, 0, 0, -19, -63, 0, 0, 0, 0, -29, -58, 0, 0, 0, 0, -37, -55, 0, 0, 0, 0, -47, -52)
+}
+point_count = 11
+
+[node name="StaticBody2D" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="TreeShadow" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 9)
+scale = Vector2(1.08594, 0.324951)
+texture = ExtResource("2_mclgp")
+
+[node name="Tree01" type="Sprite2D" parent="."]
+show_behind_parent = true
+clip_children = 2
+visibility_layer = 2
+position = Vector2(0, -37)
+scale = Vector2(1, 0.945312)
+texture = ExtResource("1_f3ydu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, 17, -11, 1, -56, -4, -55, -22, -46, -37, -41, -44, -45, -52, 40, -53, 44, -45, 38, -37, 54, -23, 52, -4, 8, 2, 6, 18)
+
+[node name="BirdPerch" type="Path2D" parent="."]
+curve = SubResource("Curve2D_mclgp")
+
+[node name="BirdSpot" type="PathFollow2D" parent="BirdPerch"]
+position = Vector2(41, -52)
+rotation = -2.77905
