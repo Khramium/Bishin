@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7kvq6octmb3s"]
+[gd_scene load_steps=5 format=3 uid="uid://c7kvq6octmb3s"]
 
+[ext_resource type="Script" uid="uid://ep443x2bl5h7" path="res://Enviroment Assets/tree_01.gd" id="1_arcv5"]
 [ext_resource type="Texture2D" uid="uid://cvd8ikcfq1db3" path="res://FishAssets/JunkAssets + Player/Tree01.png" id="1_f3ydu"]
 [ext_resource type="Texture2D" uid="uid://370gp0aesjv1" path="res://FishAssets/JunkAssets + Player/TreeShadow.png" id="2_mclgp"]
 
@@ -9,8 +10,9 @@ _data = {
 }
 point_count = 11
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Tree" type="StaticBody2D"]
 y_sort_enabled = true
+script = ExtResource("1_arcv5")
 
 [node name="TreeShadow" type="Sprite2D" parent="."]
 z_index = -1
@@ -30,8 +32,10 @@ texture = ExtResource("1_f3ydu")
 polygon = PackedVector2Array(-10, 17, -11, 1, -56, -4, -55, -22, -46, -37, -41, -44, -45, -52, 40, -53, 44, -45, 38, -37, 54, -23, 52, -4, 8, 2, 6, 18)
 
 [node name="BirdPerch" type="Path2D" parent="."]
+unique_name_in_owner = true
 curve = SubResource("Curve2D_mclgp")
 
 [node name="BirdSpot" type="PathFollow2D" parent="BirdPerch"]
+unique_name_in_owner = true
 position = Vector2(41, -52)
 rotation = -2.77905

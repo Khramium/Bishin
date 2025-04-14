@@ -21,9 +21,9 @@ point_count = 60
 
 [sub_resource type="Curve2D" id="Curve2D_q5amn"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1880, 515, 0, 0, 0, 0, 1871, 57, 0, 0, 0, 0, 98, 74, 0, 0, 0, 0, 101, 498)
+"points": PackedVector2Array(0, 0, 0, 0, 1972, 566, 0, 0, 0, 0, 1960, -32, 0, 0, 0, 0, 1906.28, -28.5709, 0, 0, 0, 0, -16, -19, 0, 0, 0, 0, -53, -18, 0, 0, 0, 0, -57, 593)
 }
-point_count = 4
+point_count = 6
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_q5amn"]
 a = Vector2(840, 1000)
@@ -79,8 +79,8 @@ curve = SubResource("Curve2D_q5amn")
 
 [node name="BirdSpawns" type="PathFollow2D" parent="BirdLogic/BirdZone"]
 unique_name_in_owner = true
-position = Vector2(1880, 515)
-rotation = -1.59044
+position = Vector2(1972, 566)
+rotation = -1.59086
 
 [node name="BirdTimer" type="Timer" parent="BirdLogic"]
 unique_name_in_owner = true

@@ -4,6 +4,14 @@ extends Node2D
 var path_node: Path2D
 var rng = RandomNumberGenerator.new()
 var birdcount = 0
+var treelist: Array = []
+
+func add_tree(tree):
+	treelist.append(tree)
+	
+func rand_tree():
+	var tree = treelist[randi() % treelist.size()]
+	return tree
 
 func spawn_wave():
 	var new_wave = preload("res://Enviroment Assets/wave.tscn").instantiate()
@@ -17,35 +25,36 @@ func spawn_bird():
 	new_bird.dead.connect(_on_bird_dead)
 	new_bird.path_node = $TreeSpots
 	new_bird.leave_node = %BirdZone
+	new_bird.the_pond = self
 	%BirdSpawns.progress_ratio = randf()
 	new_bird.global_position = %BirdSpawns.global_position
 	add_child(new_bird)
 	
 func _ready():
-	var treecount = 30
-	var trees = 0
+	var treecount = 13
 	var progress = 0.0
 	var progressA = 1.0 / treecount
 	
-	while treecount > trees:
-		var grass = 0
-		var progressB = progress + progressA + rng.randf_range(0.01, 0.1)
+	for i in range(treecount):
+		var jitter = rng.randf_range(-0.02, 0.02) # small offset for natural spacing
+		var this_progress = clamp(progress + jitter, 0.0, 1.0)
+		
 		var new_tree = preload("res://Enviroment Assets/tree_01.tscn").instantiate()
-		%TreeSpawns.progress_ratio = clamp(progress, 0.0, 1.0)
+		%TreeSpawns.progress_ratio = this_progress
 		new_tree.global_position = %TreeSpawns.global_position
-		while grass < 3:
+		add_child(new_tree)
+		add_tree(new_tree)
+		
+		# Add grass under tree
+		for _i in range(3):
 			var new_grass = preload("res://Scripts/grass.tscn").instantiate()
-			var progressG = randf()
-			%TreeSpawns.progress_ratio = progressG
+			%TreeSpawns.progress_ratio = clamp(this_progress + rng.randf_range(-0.01, 0.01), 0.0, 1.0)
 			new_grass.global_position = %TreeSpawns.global_position
 			add_child(new_grass)
-			grass += 1
-		# new_tree.z_index = trees - treecount
-		add_child(new_tree)
 		
+		progress += progressA
 
-		progress = progressB 
-		trees += 1
+
 
 func _on_bird_dead():
 	birdcount -= 1

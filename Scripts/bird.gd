@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 var path_node: Path2D
 var leave_node: Path2D
+var the_pond
 var fly_speed = 150.0
 var walk_speed = 80.0
 var target_position: Vector2
@@ -16,7 +17,6 @@ var stuck_timer = 0.0
 const MAX_STUCK_TIME = 0.5
 var last_position: Vector2
 var wobble_time := 0.0
-
 signal dead
 
 # when bird leave turn off Y-sort and set z level to above
@@ -24,13 +24,25 @@ signal dead
 
 func _ready():
 	pick_random_target()
-
+	busy = true
+	
 func pick_random_target():
-	var curve = path_node.curve
+	var tree = the_pond.rand_tree()
+	var choose = 1
+	# var choose = randi() & 2 # lookup later, web code
+	var spot = path_node
+	if choose == 1:
+		# perch
+		var perch_path: Path2D = tree.get_perch_spots()
+		spot = perch_path # This is the Path2D
+		
+	
+	var curve = spot.curve
 	var length = curve.get_baked_length()
 	var offset = randf() * length
 	target_position = curve.sample_baked(offset)
 	moving = true
+	print("Bird target position set to: ", target_position)
 	
 func _pick_smarter_target(stuck_dir):
 	var curve = path_node.curve

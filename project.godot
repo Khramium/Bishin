@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Bishin"
+config/description="A little fishing game to learn basic Godot. Featuring slightly too fancy birds."
 run/main_scene="uid://bixew7r13bc65"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://c6aqufscbbasp"
 
 [display]
 
