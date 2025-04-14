@@ -6,3 +6,6 @@ func get_perch_spots():
 
 func get_trunk():
 	return %Trunk
+
+func get_nono():
+	return %NoNoZone

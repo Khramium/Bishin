@@ -45,8 +45,18 @@ func pick_random_target():
 	var curve = spot.curve
 	var length = curve.get_baked_length()
 
+	var offlimits = tree.get_nono()
+	var local_polygon = offlimits.polygon
+	var global_polygon = []
+	for point in local_polygon:
+		global_polygon.append(offlimits.to_global(point))
+	
 	var offset = randf() * length
-	target_position = spot.to_global(curve.sample_baked(offset))
+	var candidate = spot.to_global(curve.sample_baked(offset))
+	while Geometry2D.is_point_in_polygon(candidate, global_polygon):
+		offset = randf() * length
+		candidate = spot.to_global(curve.sample_baked(offset))
+	target_position = candidate
 	moving = true
 
 func _pick_smarter_target(stuck_dir):
