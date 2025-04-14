@@ -37,7 +37,7 @@ func _ready():
 	
 	for i in range(treecount):
 		var jitter = rng.randf_range(-0.02, 0.02) # small offset for natural spacing
-		var this_progress = clamp(progress + jitter, 0.0, 1.0)
+		var this_progress = clamp(progress + jitter, 0.05, 0.8)
 		
 		var new_tree = preload("res://Enviroment Assets/tree_01.tscn").instantiate()
 		%TreeSpawns.progress_ratio = this_progress
