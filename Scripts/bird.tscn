@@ -230,7 +230,6 @@ shape = SubResource("CapsuleShape2D_qykic")
 
 [node name="BirdDebug" type="Label" parent="."]
 unique_name_in_owner = true
-visible = false
 z_index = 100
 z_as_relative = false
 offset_left = -62.0

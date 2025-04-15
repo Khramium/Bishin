@@ -55,7 +55,6 @@ func _ready():
 		progress += progressA
 
 
-
 func _on_bird_dead():
 	birdcount -= 1
 
