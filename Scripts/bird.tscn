@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://dru3terprcocy" path="res://FishAssets/JunkAssets + Player/BirdBits/Bird_Wander2.png" id="36_y8bji"]
 [ext_resource type="Texture2D" uid="uid://j6s6mw8f7x78" path="res://FishAssets/JunkAssets + Player/BirdBits/Bird_Wander3.png" id="37_637br"]
 [ext_resource type="Texture2D" uid="uid://dcbmlw5wqg485" path="res://FishAssets/JunkAssets + Player/BirdBits/Bird_Wander4.png" id="38_laent"]
+[ext_resource type="FontFile" uid="uid://bf8xfmj6g7afo" path="res://FishAssets/UI_Elements/VCR_OSD_MONO_1.001.ttf" id="38_yajig"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vlis"]
 animations = [{
@@ -205,9 +206,6 @@ animations = [{
 radius = 16.0
 height = 32.0
 
-[sub_resource type="SystemFont" id="SystemFont_siy04"]
-subpixel_positioning = 0
-
 [node name="Bird" type="CharacterBody2D"]
 script = ExtResource("1_qykic")
 
@@ -230,14 +228,14 @@ shape = SubResource("CapsuleShape2D_qykic")
 
 [node name="BirdDebug" type="Label" parent="."]
 unique_name_in_owner = true
-z_index = 100
+z_index = 50
 z_as_relative = false
 offset_left = -62.0
 offset_top = -40.0
 offset_right = 64.0
 offset_bottom = -17.0
 theme_override_colors/font_color = Color(0.925353, 0.925353, 0.925353, 1)
-theme_override_fonts/font = SubResource("SystemFont_siy04")
+theme_override_fonts/font = ExtResource("38_yajig")
 theme_override_font_sizes/font_size = 0
 horizontal_alignment = 1
 uppercase = true

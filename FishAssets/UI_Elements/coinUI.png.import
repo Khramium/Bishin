@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkx5tlwntyisd"
-path="res://.godot/imported/UI.png-81fa7986a101705633530d4d66fb448b.ctex"
+uid="uid://bplpp2km8xn1l"
+path="res://.godot/imported/coinUI.png-7b731a401e563c9588b0cf5cc1760232.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FishAssets/JunkAssets + Player/UI.png"
-dest_files=["res://.godot/imported/UI.png-81fa7986a101705633530d4d66fb448b.ctex"]
+source_file="res://FishAssets/UI_Elements/coinUI.png"
+dest_files=["res://.godot/imported/coinUI.png-7b731a401e563c9588b0cf5cc1760232.ctex"]
 
 [params]
 

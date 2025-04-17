@@ -11,6 +11,7 @@ _data = {
 point_count = 11
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_arcv5"]
+radius = 3.0
 height = 92.0
 
 [node name="Tree" type="StaticBody2D"]
@@ -46,6 +47,6 @@ rotation = -2.52596
 
 [node name="Trunk" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-1, -45)
+position = Vector2(0, -45)
 shape = SubResource("CapsuleShape2D_arcv5")
 disabled = true

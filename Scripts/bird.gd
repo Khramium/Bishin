@@ -19,7 +19,7 @@ const MAX_STUCK_TIME = 0.5
 var last_position: Vector2
 var wobble_time := 0.0
 var tree
-var doing = "Grounding"
+var doing = "Landing"
 signal dead
 
 # when bird leave turn off Y-sort and set z level to above
@@ -31,34 +31,28 @@ func _ready():
 	
 func pick_random_target():
 	tree = the_pond.rand_tree()
-	var choose = randi() & 2 # lookup later, web code
+	var trunk = tree.get_trunk()  # Access the trunk here
+	
 	var spot = path_node
-	if leaving == true:
+	var choose = randi() & 2
+	if leaving:
 		perching = false
 		spot = leave_node
 	elif choose != 2:
 		perching = true
-		var perch_path: Path2D = tree.get_perch_spots()
-		spot = perch_path
+		spot = tree.get_perch_spots()
 		doing = "Perching"
 	else:
 		perching = false
+
 	var curve = spot.curve
 	var length = curve.get_baked_length()
-
-	var offlimits = tree.get_nono()
-	var local_polygon = offlimits.polygon
-	var global_polygon = []
-	for point in local_polygon:
-		global_polygon.append(offlimits.to_global(point))
-	
 	var offset = randf() * length
-	var candidate = spot.to_global(curve.sample_baked(offset))
-	while Geometry2D.is_point_in_polygon(candidate, global_polygon):
-		offset = randf() * length
-		candidate = spot.to_global(curve.sample_baked(offset))
-	target_position = candidate
+	var local_point = curve.sample_baked(offset)
+	var global_point = spot.global_transform * local_point
+	target_position = global_point
 	moving = true
+
 
 func _pick_smarter_target(stuck_dir):
 	var curve = path_node.curve
@@ -109,7 +103,6 @@ func what_bird_doin():
 	
 	# Wander
 	elif desire == 2:
-		
 		var whatdo = randi_range(0, 2)
 		if whatdo == 2 or perching == true:
 			flying = true

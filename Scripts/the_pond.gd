@@ -2,9 +2,11 @@ extends Node2D
 
 
 var path_node: Path2D
+var swim_spot: Area2D
 var rng = RandomNumberGenerator.new()
 var birdcount = 0
 var treelist: Array = []
+var fishnames
 
 func add_tree(tree):
 	treelist.append(tree)
@@ -30,6 +32,15 @@ func spawn_bird():
 	new_bird.global_position = %BirdSpawns.global_position
 	add_child(new_bird)
 	
+func _spawn_fish(fname):
+	var new_fish = preload("res://Scripts/feesh.tscn").instantiate()
+	new_fish.swim_zone = %FishHouse
+	new_fish.fname = fname
+	%FishSpawns.progress_ratio = randf()
+	new_fish.global_position = %FishSpawns.global_position
+	add_child(new_fish)
+
+	
 func _ready():
 	var treecount = 13
 	var progress = 0.0
@@ -53,7 +64,8 @@ func _ready():
 			add_child(new_grass)
 		
 		progress += progressA
-
+	for i in range(15):
+		_spawn_fish(%FishPond.pond[i].name)
 
 func _on_bird_dead():
 	birdcount -= 1
