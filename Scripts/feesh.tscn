@@ -43,7 +43,8 @@ sprite_frames = SubResource("SpriteFrames_mwyir")
 animation = &"swim"
 frame_progress = 0.780045
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="BodFeesh" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(-4, -3)
 shape = SubResource("CircleShape2D_hjx12")
 

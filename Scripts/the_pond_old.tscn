@@ -1,16 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://bixew7r13bc65"]
+[gd_scene load_steps=20 format=3 uid="uid://gmcusrfg32m5"]
 
-[ext_resource type="Script" uid="uid://dx35i5pma1p6d" path="res://Scripts/the_pond.gd" id="1_6vshc"]
-[ext_resource type="Texture2D" uid="uid://crqc2wx2gg5ya" path="res://FishAssets/1BITLake.png" id="1_jl2p6"]
-[ext_resource type="PackedScene" uid="uid://5jtsl457gpwv" path="res://Scripts/player.tscn" id="3_tuf3c"]
-[ext_resource type="Texture2D" uid="uid://cxrkhkvn7j720" path="res://FishAssets/JunkAssets + Player/Dock_Legs.png" id="5_q5amn"]
-[ext_resource type="Texture2D" uid="uid://d2dn1aaje0hg2" path="res://FishAssets/JunkAssets + Player/Dock.png" id="6_q5amn"]
-[ext_resource type="Script" uid="uid://bdhwm52h6sgcq" path="res://Scripts/cast_zone.gd" id="7_eggdi"]
-[ext_resource type="Script" uid="uid://bc3i6yh8xq8j7" path="res://Scripts/bird_timer.gd" id="7_r3lch"]
-[ext_resource type="FontFile" uid="uid://bf8xfmj6g7afo" path="res://FishAssets/UI_Elements/VCR_OSD_MONO_1.001.ttf" id="8_1mc08"]
-[ext_resource type="Script" uid="uid://byd4v6ck6hx2i" path="res://Scripts/fish_pond.gd" id="8_eggdi"]
-[ext_resource type="Texture2D" uid="uid://8qmjujvxxxbb" path="res://FishAssets/UI_Elements/UI.png" id="9_ymm6u"]
-[ext_resource type="Script" uid="uid://cv6w05touw1il" path="res://Scripts/ui_boxes.gd" id="10_4kvya"]
+[ext_resource type="Script" uid="uid://dx35i5pma1p6d" path="res://Scripts/the_pond.gd" id="1_yuoyk"]
+[ext_resource type="PackedScene" uid="uid://5jtsl457gpwv" path="res://Scripts/player.tscn" id="2_o056m"]
+[ext_resource type="Texture2D" uid="uid://crqc2wx2gg5ya" path="res://FishAssets/1BITLake.png" id="3_2rtes"]
+[ext_resource type="Script" uid="uid://bc3i6yh8xq8j7" path="res://Scripts/bird_timer.gd" id="4_7cvp0"]
+[ext_resource type="Texture2D" uid="uid://d2dn1aaje0hg2" path="res://FishAssets/JunkAssets + Player/Dock.png" id="5_34m5k"]
+[ext_resource type="Texture2D" uid="uid://cxrkhkvn7j720" path="res://FishAssets/JunkAssets + Player/Dock_Legs.png" id="6_cu31b"]
+[ext_resource type="Script" uid="uid://bdhwm52h6sgcq" path="res://Scripts/cast_zone.gd" id="7_5svq5"]
+[ext_resource type="FontFile" uid="uid://bf8xfmj6g7afo" path="res://FishAssets/UI_Elements/VCR_OSD_MONO_1.001.ttf" id="8_uubft"]
+[ext_resource type="Script" uid="uid://byd4v6ck6hx2i" path="res://Scripts/fish_pond.gd" id="9_jr0fk"]
+[ext_resource type="Texture2D" uid="uid://8qmjujvxxxbb" path="res://FishAssets/UI_Elements/UI.png" id="10_ccngt"]
+[ext_resource type="Script" uid="uid://cv6w05touw1il" path="res://Scripts/ui_boxes.gd" id="11_v7cem"]
 
 [sub_resource type="Curve2D" id="Curve2D_6vshc"]
 _data = {
@@ -50,43 +50,13 @@ _data = {
 }
 point_count = 25
 
-[sub_resource type="Curve2D" id="Curve2D_1mc08"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1941, 992, 0, 0, 0, 0, 1942, 1125, 0, 0, 0, 0, 360, 1109, 0, 0, 0, 0, 361, 1109)
-}
-point_count = 4
-
-[sub_resource type="Curve2D" id="Curve2D_c2ewf"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1901, 981, 0, 0, 0, 0, 1690, 999, 0, 0, 0, 0, 1551, 994, 0, 0, 0, 0, 1396, 1001, 0, 0, 0, 0, 1231, 997, 0, 0, 0, 0, 1063, 982, 0, 0, 0, 0, 973, 1004)
-}
-point_count = 7
-
 [node name="The Pond" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
-script = ExtResource("1_6vshc")
+script = ExtResource("1_yuoyk")
 
-[node name="Player" parent="." instance=ExtResource("3_tuf3c")]
-unique_name_in_owner = true
-z_index = 2
-position = Vector2(790, 869)
-
-[node name="FishGo" type="Marker2D" parent="Player"]
-unique_name_in_owner = true
-position = Vector2(-2, -37)
-
-[node name="LineTip" type="Marker2D" parent="Player"]
-unique_name_in_owner = true
-position = Vector2(80, -74)
-
-[node name="Line" type="Line2D" parent="Player/LineTip"]
-unique_name_in_owner = true
-visible = false
-width = 3.0
-
-[node name="Bobber" type="Marker2D" parent="Player/LineTip/Line"]
-unique_name_in_owner = true
+[node name="Player" parent="." instance=ExtResource("2_o056m")]
+position = Vector2(-61, 941)
 
 [node name="Shader" type="CanvasLayer" parent="."]
 
@@ -95,7 +65,7 @@ layer = -58
 
 [node name="1bitLake" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(960, 540)
-texture = ExtResource("1_jl2p6")
+texture = ExtResource("3_2rtes")
 
 [node name="WaveAndFish" type="Path2D" parent="."]
 visible = false
@@ -111,7 +81,6 @@ wait_time = 0.4
 autostart = true
 
 [node name="TreeSpots" type="Path2D" parent="."]
-visible = false
 position = Vector2(21.5611, -29.8499)
 scale = Vector2(1.02998, 0.983003)
 curve = SubResource("Curve2D_m16bc")
@@ -137,18 +106,16 @@ rotation = -1.61141
 [node name="BirdTimer" type="Timer" parent="BirdLogic"]
 unique_name_in_owner = true
 autostart = true
-script = ExtResource("7_r3lch")
+script = ExtResource("4_7cvp0")
 
 [node name="DockBits" type="StaticBody2D" parent="."]
 
 [node name="Dock" type="Sprite2D" parent="DockBits"]
 modulate = Color(0.340339, 0.340339, 0.340339, 1)
-z_index = 1
 position = Vector2(471, 1013)
-texture = ExtResource("6_q5amn")
+texture = ExtResource("5_34m5k")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DockBits"]
-visible = false
 position = Vector2(1, 29)
 polygon = PackedVector2Array(-227, 950, 905, 947, 911, 959, -229, 961)
 
@@ -164,11 +131,11 @@ shape = SubResource("SegmentShape2D_r3lch")
 modulate = Color(0.341176, 0.341176, 0.341176, 1)
 z_index = 100
 position = Vector2(906, 1069)
-texture = ExtResource("5_q5amn")
+texture = ExtResource("6_cu31b")
 
 [node name="CastZone" type="Area2D" parent="."]
 unique_name_in_owner = true
-script = ExtResource("7_eggdi")
+script = ExtResource("7_5svq5")
 
 [node name="CastingCheck" type="CollisionShape2D" parent="CastZone"]
 unique_name_in_owner = true
@@ -185,7 +152,7 @@ offset_top = 830.0
 offset_right = 996.0
 offset_bottom = 853.0
 theme_override_colors/font_color = Color(0.925353, 0.925353, 0.925353, 1)
-theme_override_fonts/font = ExtResource("8_1mc08")
+theme_override_fonts/font = ExtResource("8_uubft")
 theme_override_font_sizes/font_size = 25
 text = "[ Space = Cast ]"
 horizontal_alignment = 1
@@ -193,7 +160,7 @@ uppercase = true
 
 [node name="FishPond" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("8_eggdi")
+script = ExtResource("9_jr0fk")
 
 [node name="UiBoxes" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -202,8 +169,8 @@ z_index = 100
 z_as_relative = false
 position = Vector2(684, 207)
 scale = Vector2(0.809211, 0.745552)
-texture = ExtResource("9_ymm6u")
-script = ExtResource("10_4kvya")
+texture = ExtResource("10_ccngt")
+script = ExtResource("11_v7cem")
 
 [node name="Line1" type="Label" parent="UiBoxes"]
 unique_name_in_owner = true
@@ -211,18 +178,18 @@ offset_left = -34.6016
 offset_top = -114.009
 offset_right = 619.398
 offset_bottom = -51.0098
-theme_override_fonts/font = ExtResource("8_1mc08")
+theme_override_fonts/font = ExtResource("8_uubft")
 theme_override_font_sizes/font_size = 45
 autowrap_mode = 3
 uppercase = true
 
 [node name="Line2" type="Label" parent="UiBoxes"]
 unique_name_in_owner = true
-offset_left = -35.0
-offset_top = 7.0
-offset_right = 613.0
-offset_bottom = 191.0
-theme_override_fonts/font = ExtResource("8_1mc08")
+offset_left = -34.6016
+offset_top = 6.70643
+offset_right = 621.399
+offset_bottom = 190.707
+theme_override_fonts/font = ExtResource("8_uubft")
 theme_override_font_sizes/font_size = 45
 autowrap_mode = 3
 uppercase = true
@@ -233,7 +200,7 @@ offset_left = -40.7805
 offset_top = -232.043
 offset_right = 613.219
 offset_bottom = -169.043
-theme_override_fonts/font = ExtResource("8_1mc08")
+theme_override_fonts/font = ExtResource("8_uubft")
 theme_override_font_sizes/font_size = 45
 text = " Idle"
 autowrap_mode = 3
@@ -244,36 +211,17 @@ unique_name_in_owner = true
 
 [node name="SwimZone" type="CollisionShape2D" parent="FishHouse"]
 unique_name_in_owner = true
-visible = false
 position = Vector2(1218.75, 1038.5)
 shape = SubResource("RectangleShape2D_1mc08")
 
 [node name="FishLine" type="Path2D" parent="."]
 unique_name_in_owner = true
-visible = false
 curve = SubResource("Curve2D_jdii3")
 
 [node name="FishSpawns" type="PathFollow2D" parent="FishLine"]
 unique_name_in_owner = true
 position = Vector2(1889, 970)
 rotation = 1.5708
-
-[node name="Fish2" type="Path2D" parent="."]
-visible = false
-curve = SubResource("Curve2D_1mc08")
-
-[node name="FishRestock" type="PathFollow2D" parent="Fish2"]
-unique_name_in_owner = true
-position = Vector2(1941, 992)
-rotation = 1.56328
-
-[node name="BobberSpots" type="Path2D" parent="."]
-curve = SubResource("Curve2D_c2ewf")
-
-[node name="Bob" type="PathFollow2D" parent="BobberSpots"]
-unique_name_in_owner = true
-position = Vector2(1901, 981)
-rotation = 3.05649
 
 [connection signal="cast" from="Player" to="UiBoxes" method="_on_player_cast"]
 [connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]

@@ -26,8 +26,26 @@ signal dead
 @onready var sprite = $AnimatedSprite2D
 
 func _ready():
+	await get_tree().create_timer(0.1).timeout
 	pick_random_target()
 	busy = true
+
+func idle_check():
+	if sprite.animation != "idle":
+		sprite.play("idle")
+		
+func become_idle():
+	idle_check()
+	busy = false
+	doing = "Sitting"
+	
+func get_point(spot):
+	var curve = spot.curve
+	var length = curve.get_baked_length()
+	var offset = randf() * length
+	var local_point = curve.sample_baked(offset)
+	return spot.global_transform * local_point
+	
 	
 func pick_random_target():
 	tree = the_pond.rand_tree()
@@ -44,24 +62,15 @@ func pick_random_target():
 		doing = "Perching"
 	else:
 		perching = false
-
-	var curve = spot.curve
-	var length = curve.get_baked_length()
-	var offset = randf() * length
-	var local_point = curve.sample_baked(offset)
-	var global_point = spot.global_transform * local_point
-	target_position = global_point
+	target_position = get_point(spot)
 	moving = true
 
 
-func _pick_smarter_target(stuck_dir):
-	var curve = path_node.curve
-	var length = curve.get_baked_length()
+func pick_smarter_target(stuck_dir):
 	flying = true
 	doing = "Re-Routing"
 	for i in range(10):
-		var offset = randf() * length
-		var candidate = curve.sample_baked(offset)
+		var candidate = get_point(path_node)
 		var dir = (candidate - global_position).normalized()
 		if dir.dot(stuck_dir) < -0.3:
 			target_position = candidate
@@ -74,8 +83,7 @@ func what_bird_doin():
 	busy = true
 	# Leave
 	if desire == 0:
-		if sprite.animation != "idle":
-			sprite.play("idle")
+		idle_check()
 		boredom += 1
 		if boredom <= 1:
 			busy = false
@@ -95,8 +103,7 @@ func what_bird_doin():
 			sprite.play("peck")
 			doing = "Pecking"
 			await get_tree().create_timer(1.7).timeout
-		if sprite.animation != "idle":
-			sprite.play("idle")
+		idle_check()
 		doing = "Sitting"
 		busy = false  # Set busy to false, allowing a new action to be picked later
 		
@@ -114,8 +121,7 @@ func what_bird_doin():
 	
 	# Lie Down
 	elif desire == 3:
-		if sprite.animation != "idle":
-			sprite.play("idle")
+		idle_check()
 		busy = false  # Set busy to false so new actions can be picked
 		doing = "Sitting"
 
@@ -125,7 +131,6 @@ func _physics_process(delta):
 		return
 
 	var direction = (target_position - global_position).normalized()
-	var trunk = tree.get_trunk()
 		
 	var wobble = randi_range(1, 35)
 	if flying or perching:
@@ -155,14 +160,14 @@ func _physics_process(delta):
 		sprite.play("idle")
 		doing = "Sitting"
 			# Orient the bird to face away from the trunk
-		if trunk:
-			direction = (global_position - trunk.global_position).normalized()
+		if tree.get_trunk():
+			direction = (global_position - tree.get_trunk().global_position).normalized()
 			sprite.flip_h = direction.x < 0
 	else:
 		if global_position.distance_to(last_position) < 1.0:
 			stuck_timer += delta
 			if stuck_timer > MAX_STUCK_TIME:
-				_pick_smarter_target(direction)
+				pick_smarter_target(direction)
 				stuck_timer = 0.0
 		else:
 			stuck_timer = 0.0
