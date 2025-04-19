@@ -7,8 +7,6 @@ var waiting = false
 signal cast_ready
 signal done
 
-@onready var sprite = $AnimatedSprite2D
-
 #func _ready():
 	#sprite.play("IDLE")
 
