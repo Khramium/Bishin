@@ -6,6 +6,8 @@ var waiting = false
 
 signal cast_ready
 signal done
+signal in_shop
+signal out_shop
 
 #func _ready():
 	#sprite.play("IDLE")
@@ -72,10 +74,15 @@ func _on_player_cast():
 
 func _on_player_shop():
 	await _erase_all_text(0.01)
+	_type_text(" Exit", %Activity)
+	_type_text(" Register Fishpendium", %Line1)
 	await _type_text('"Welcome to Fish House!"', %Line2)
+	emit_signal("in_shop")
 
 
 func _on_player_out():
-	await _erase_all_text(0.01)
+	emit_signal("out_shop")
+	_erase_all_text(0.01)
 	_reset()
 	%ShopZone.reset()
+	

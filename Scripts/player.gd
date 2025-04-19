@@ -5,6 +5,8 @@ var casted = false
 var canmove = true
 var busy = false
 var line_wobble_time := 0.0
+var exitable = true
+
 signal cast
 signal shop
 signal out
@@ -37,6 +39,7 @@ func _physics_process(delta: float) -> void:
 	
 func _cast_rod():
 	if Input.is_action_just_pressed("ui_accept"):
+		sprite.flip_h = false
 		%Bob.progress_ratio = randf()
 		canmove = false
 		busy = true
@@ -99,7 +102,7 @@ func _enter():
 
 func _leave():
 	# This will be a UI button later
-	if Input.is_action_just_pressed("ui_accept") and busy:
+	if Input.is_action_just_pressed("ui_accept") and exitable:
 		emit_signal("out")
 		%Port.play("IDLE")
 		sprite.flip_h = false

@@ -3,6 +3,7 @@ var full_text := "[Space = Enter]"
 var body_inside = false
 signal shop_ready
 
+#EXIT MUST BE ON TOP
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

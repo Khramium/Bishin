@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://bixew7r13bc65"]
+[gd_scene load_steps=86 format=3 uid="uid://bixew7r13bc65"]
 
 [ext_resource type="Script" uid="uid://dx35i5pma1p6d" path="res://Scripts/the_pond.gd" id="1_6vshc"]
 [ext_resource type="Texture2D" uid="uid://crqc2wx2gg5ya" path="res://FishAssets/1BITLake.png" id="1_jl2p6"]
@@ -49,23 +49,28 @@
 [ext_resource type="Texture2D" uid="uid://cbgbgr3gl1jn3" path="res://FishAssets/UI_Elements/shopboy3.png" id="43_qrpb8"]
 [ext_resource type="Texture2D" uid="uid://cq8eyfdve3jgn" path="res://FishAssets/UI_Elements/shopboy4.png" id="44_ad1tr"]
 [ext_resource type="Texture2D" uid="uid://d2yrcvtuxsndq" path="res://FishAssets/UI_Elements/Cursor1.png" id="45_xmpym"]
-[ext_resource type="Texture2D" uid="uid://d0mm5kaknwwth" path="res://FishAssets/UI_Elements/Cursor2.png" id="46_35yh2"]
-[ext_resource type="Texture2D" uid="uid://oy8gyeoqwlbg" path="res://FishAssets/UI_Elements/Cursor3.png" id="47_5ihep"]
-[ext_resource type="Texture2D" uid="uid://bygc8xfn6h8dw" path="res://FishAssets/UI_Elements/Cursor4.png" id="48_mxopo"]
-[ext_resource type="Texture2D" uid="uid://tvhmr3mhvyt8" path="res://FishAssets/UI_Elements/Cursor5.png" id="49_15yar"]
-[ext_resource type="Texture2D" uid="uid://b2386ath13fq3" path="res://FishAssets/UI_Elements/Cursor6.png" id="50_6vp8y"]
+[ext_resource type="Script" uid="uid://dbto213i47bdt" path="res://Scripts/cursor.gd" id="50_787io"]
 [ext_resource type="Script" uid="uid://bv4nteq0c2i3j" path="res://Scripts/shop_zone.gd" id="51_35yh2"]
 [ext_resource type="Script" uid="uid://cc47n6xddjuhp" path="res://Scripts/leave_zone.gd" id="56_gr0d4"]
 [ext_resource type="Texture2D" uid="uid://d16pgmvpfou5p" path="res://FishAssets/UI_Elements/FishPendiumClosed.png" id="57_ad1tr"]
-[ext_resource type="Texture2D" uid="uid://bsrwk1xu32uga" path="res://FishAssets/UI_Elements/FishPendium.png" id="58_ke7uo"]
+[ext_resource type="Texture2D" uid="uid://cuct7f57gt1wn" path="res://FishAssets/UI_Elements/FishPendiumShopClosed1.png" id="57_gxdue"]
+[ext_resource type="Texture2D" uid="uid://beptxckuyfof7" path="res://FishAssets/UI_Elements/FishPendiumShopClosed2.png" id="58_1jxbr"]
 [ext_resource type="Texture2D" uid="uid://jmafqnappbes" path="res://FishAssets/UI_Elements/FishPendium1.png" id="59_ct5rc"]
+[ext_resource type="Texture2D" uid="uid://qf4hcm3usi0o" path="res://FishAssets/UI_Elements/FishPendiumShopClosed3.png" id="59_ujumf"]
+[ext_resource type="Texture2D" uid="uid://dehxreyrr1g8o" path="res://FishAssets/UI_Elements/FishPendiumShopClosed4.png" id="60_p5ovb"]
 [ext_resource type="Texture2D" uid="uid://cmttfp6h47jg3" path="res://FishAssets/UI_Elements/FishPendium2.png" id="60_wfufk"]
 [ext_resource type="Texture2D" uid="uid://b4x5tm5v84s2w" path="res://FishAssets/UI_Elements/FishPendium3.png" id="61_vcvwv"]
+[ext_resource type="Texture2D" uid="uid://ctxot5vmtwnv" path="res://FishAssets/UI_Elements/FishPendiumShopClosed5.png" id="61_vwws1"]
+[ext_resource type="Texture2D" uid="uid://dw2g2u4igieuf" path="res://FishAssets/UI_Elements/FishPendiumShopClosed6.png" id="62_qwnjp"]
 [ext_resource type="Texture2D" uid="uid://b676yx7hhgdsl" path="res://FishAssets/UI_Elements/FishPendium4.png" id="62_yof2e"]
+[ext_resource type="Texture2D" uid="uid://cts5evisvsfua" path="res://FishAssets/UI_Elements/FishPendiumShopClosed7.png" id="63_ue3jj"]
 [ext_resource type="Texture2D" uid="uid://b2acaxfrt33wo" path="res://FishAssets/UI_Elements/FishPendium5.png" id="63_vk4f2"]
+[ext_resource type="Texture2D" uid="uid://q3eovhh1ntkh" path="res://FishAssets/UI_Elements/FishPendiumShopClosed8.png" id="64_45y5k"]
 [ext_resource type="Texture2D" uid="uid://fwnq7e2b82ia" path="res://FishAssets/UI_Elements/FishPendium6.png" id="64_a6nei"]
+[ext_resource type="Texture2D" uid="uid://d1bniaxuplpi5" path="res://FishAssets/UI_Elements/FishPendiumShopClosed9.png" id="65_1jxbr"]
 [ext_resource type="Texture2D" uid="uid://dcillegkskw6f" path="res://FishAssets/UI_Elements/FishPendium7.png" id="65_787io"]
 [ext_resource type="Texture2D" uid="uid://dq0fyb442f5ju" path="res://FishAssets/UI_Elements/FishPendium8.png" id="66_6xitt"]
+[ext_resource type="Texture2D" uid="uid://brbk56enjinac" path="res://FishAssets/UI_Elements/FishPendiumShopClosed10.png" id="66_ujumf"]
 [ext_resource type="Script" uid="uid://bhtxdwncx4pqp" path="res://Scripts/fishpendium.gd" id="67_wfufk"]
 
 [sub_resource type="Curve2D" id="Curve2D_6vshc"]
@@ -364,32 +369,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gr0d4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("45_xmpym")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_35yh2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_5ihep")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_mxopo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_15yar")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_6vp8y")
-}],
-"loop": true,
-"name": &"cursor",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mc08"]
 size = Vector2(1726.5, 111)
 
@@ -415,6 +394,41 @@ point_count = 8
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("57_gxdue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_1jxbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ujumf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_p5ovb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_vwws1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_qwnjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_ue3jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_45y5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_1jxbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ujumf")
+}],
+"loop": false,
+"name": &"becomepoint",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("57_ad1tr")
 }],
 "loop": false,
@@ -423,7 +437,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("58_ke7uo")
+"texture": ExtResource("66_6xitt")
 }],
 "loop": true,
 "name": &"open",
@@ -457,6 +471,20 @@ animations = [{
 "loop": false,
 "name": &"shutter",
 "speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gr0d4"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("45_xmpym")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"cursor",
+"speed": 5.0
 }]
 
 [node name="The Pond" type="Node2D"]
@@ -647,14 +675,6 @@ animation = &"IDLE"
 autoplay = "IDLE"
 frame_progress = 0.680943
 
-[node name="Cursor" type="AnimatedSprite2D" parent="UiBoxes"]
-visible = false
-position = Vector2(682.146, -210.582)
-sprite_frames = SubResource("SpriteFrames_gr0d4")
-animation = &"cursor"
-autoplay = "cursor"
-frame_progress = 0.477921
-
 [node name="FishHouse" type="Area2D" parent="."]
 unique_name_in_owner = true
 
@@ -740,26 +760,101 @@ text = "[Space = Leave]"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="Fishpendium" type="AnimatedSprite2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Fishpendium" type="AnimatedSprite2D" parent="StaticBody2D"]
 unique_name_in_owner = true
 z_index = 51
 z_as_relative = false
 position = Vector2(1582, 267)
 sprite_frames = SubResource("SpriteFrames_qrpb8")
-animation = &"closed"
+animation = &"becomepoint"
 autoplay = "closed"
+frame = 9
+frame_progress = 1.0
 script = ExtResource("67_wfufk")
 
-[node name="Header" type="Label" parent="Fishpendium"]
-offset_left = -344.0
-offset_top = -240.0
-offset_right = 310.0
-offset_bottom = -180.0
+[node name="Header" type="Label" parent="StaticBody2D/Fishpendium"]
+unique_name_in_owner = true
+offset_left = -348.0
+offset_top = -235.0
+offset_right = 306.0
+offset_bottom = -175.0
 theme_override_fonts/font = ExtResource("8_1mc08")
-theme_override_font_sizes/font_size = 43
+theme_override_font_sizes/font_size = 35
 text = "Fishpendium [Tab = Open]"
 autowrap_mode = 3
 uppercase = true
+
+[node name="ListLeft" type="Label" parent="StaticBody2D/Fishpendium"]
+visible = false
+offset_left = -349.0
+offset_top = -165.0
+offset_right = -9.0
+offset_bottom = 155.0
+theme_override_fonts/font = ExtResource("8_1mc08")
+theme_override_font_sizes/font_size = 32
+text = "#.
+
+#.
+
+#."
+autowrap_mode = 3
+uppercase = true
+
+[node name="ListRight" type="Label" parent="StaticBody2D/Fishpendium"]
+visible = false
+offset_left = -1.0
+offset_top = -171.0
+offset_right = 315.0
+offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("8_1mc08")
+theme_override_font_sizes/font_size = 32
+text = "#. ?
+
+#.
+
+#."
+autowrap_mode = 3
+uppercase = true
+
+[node name="UI" type="Label" parent="StaticBody2D/Fishpendium"]
+visible = false
+offset_left = -313.0
+offset_top = 201.0
+offset_right = 347.0
+offset_bottom = 261.0
+theme_override_fonts/font = ExtResource("8_1mc08")
+theme_override_font_sizes/font_size = 40
+text = "<---       1/3       --->"
+autowrap_mode = 3
+uppercase = true
+
+[node name="Note" type="Label" parent="StaticBody2D/Fishpendium"]
+visible = false
+z_index = 100
+z_as_relative = false
+offset_left = -127.0
+offset_top = 177.0
+offset_right = 108.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0.925353, 0.925353, 0.925353, 1)
+theme_override_fonts/font = ExtResource("8_1mc08")
+theme_override_font_sizes/font_size = 25
+text = "[Use Arrow Keys]"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Cursor" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(1220.88, 44.2279)
+scale = Vector2(1.11049, 1.12278)
+sprite_frames = SubResource("SpriteFrames_gr0d4")
+animation = &"cursor"
+autoplay = "cursor"
+frame_progress = 0.828449
+script = ExtResource("50_787io")
 
 [connection signal="cast" from="Player" to="UiBoxes" method="_on_player_cast"]
 [connection signal="out" from="Player" to="UiBoxes" method="_on_player_out"]
@@ -771,8 +866,11 @@ uppercase = true
 [connection signal="body_exited" from="CastZone" to="CastZone" method="_on_body_exited"]
 [connection signal="cast_ready" from="CastZone" to="Player" method="_on_cast_zone_cast_ready"]
 [connection signal="done" from="UiBoxes" to="Player" method="_on_ui_boxes_done"]
+[connection signal="in_shop" from="UiBoxes" to="StaticBody2D/Fishpendium" method="_on_ui_boxes_in_shop"]
+[connection signal="out_shop" from="UiBoxes" to="StaticBody2D/Fishpendium" method="_on_ui_boxes_out_shop"]
 [connection signal="body_entered" from="ShopZone" to="ShopZone" method="_on_body_entered"]
 [connection signal="body_exited" from="ShopZone" to="ShopZone" method="_on_body_exited"]
 [connection signal="shop_ready" from="ShopZone" to="Player" method="_on_shop_zone_shop_ready"]
 [connection signal="body_entered" from="LeaveZone" to="LeaveZone" method="_on_body_entered"]
 [connection signal="body_exited" from="LeaveZone" to="LeaveZone" method="_on_body_exited"]
+[connection signal="cursormode" from="StaticBody2D/Fishpendium" to="Cursor" method="_on_fishpendium_cursormode"]
