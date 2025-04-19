@@ -6,6 +6,8 @@ var canmove = true
 var busy = false
 var line_wobble_time := 0.0
 signal cast
+signal shop
+signal out
 
 const SPEED = 200.0
 const POINT_COUNT = 20
@@ -85,3 +87,27 @@ func _update_fishing_line():
 
 		pos.y += arc + wobble + vertical_bounce
 		line.add_point(line.to_local(pos))
+
+func _enter():
+	if Input.is_action_just_pressed("ui_accept"):
+		emit_signal("shop")
+		await get_tree().create_timer(0.1).timeout
+		%Port.play("shopboy")
+		%Player.visible = false
+		busy = true
+		%ShopPrompt.visible = false
+
+func _leave():
+	# This will be a UI button later
+	if Input.is_action_just_pressed("ui_accept") and busy:
+		emit_signal("out")
+		%Port.play("IDLE")
+		sprite.flip_h = false
+		%Player.visible = true
+		busy = false
+
+func _on_shop_zone_shop_ready():
+	if not busy:
+		_enter()
+	if busy:
+		_leave()

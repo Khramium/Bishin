@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fkttym2p1vnk"
-path="res://.godot/imported/drake_fish.png-13529433dd0ccb83c9c0a4708bcc95f6.ctex"
+uid="uid://dq0fyb442f5ju"
+path="res://.godot/imported/FishPendium8.png-0ec34964bbaad539224319814137345f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FishPile/FishImgs/drake_fish.png"
-dest_files=["res://.godot/imported/drake_fish.png-13529433dd0ccb83c9c0a4708bcc95f6.ctex"]
+source_file="res://FishAssets/UI_Elements/FishPendium8.png"
+dest_files=["res://.godot/imported/FishPendium8.png-0ec34964bbaad539224319814137345f.ctex"]
 
 [params]
 

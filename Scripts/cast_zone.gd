@@ -1,5 +1,5 @@
 extends Area2D
-var full_text := "[ Space = Cast ]"
+var full_text := "[Space = Cast]"
 var body_inside = false
 signal cast_ready
 
@@ -36,6 +36,7 @@ func _on_body_exited(body):
 	if %Activity.text != " Idle":
 		await %UiBoxes._erase_text(%Activity, 0.01)
 		await %UiBoxes._type_text(" Idle", %Activity)
+	%Port.play("IDLE")
 
 
 func _erase_text():

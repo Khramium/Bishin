@@ -7,6 +7,11 @@ var waiting = false
 signal cast_ready
 signal done
 
+@onready var sprite = $AnimatedSprite2D
+
+#func _ready():
+	#sprite.play("IDLE")
+
 func _erase_text(zone, speed):
 	for i in zone.text.length():
 		zone.text = zone.text.left(zone.text.length() - 1)
@@ -43,7 +48,11 @@ func _on_player_cast():
 	var daddy = self.get_parent()
 	var feesh = %FishPond.catch_random_fish()
 	var fname = " " + feesh.fname
+	var animname = feesh.fname
 	var quip = ' "' + feesh.quip + '"'
+	
+	%Port.play("IDLE")
+	animname = animname.to_lower()
 	await _erase_all_text(0.01)	
 	waiting = true
 	feesh.target_position = %Bobber.global_position
@@ -56,7 +65,19 @@ func _on_player_cast():
 	feesh.get_caught()
 	await _erase_text(%Activity, 0.01)
 	await _type_text(" CAUGHT FISH ", %Activity)
+	%Port.play(animname)
 	await _type_text(fname, %Line1)
 	await _type_text(quip, %Line2)
 	var fish = %FishPond.pick_weighted_fish(%FishPond.fish_data)
 	daddy.spawn_fish(fish.name, fish.quip, %FishRestock)
+
+
+func _on_player_shop():
+	await _erase_all_text(0.01)
+	await _type_text('"Welcome to Fish House!"', %Line2)
+
+
+func _on_player_out():
+	await _erase_all_text(0.01)
+	_reset()
+	%ShopZone.reset()

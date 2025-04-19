@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bixew7r13bc65"]
+[gd_scene load_steps=81 format=3 uid="uid://bixew7r13bc65"]
 
 [ext_resource type="Script" uid="uid://dx35i5pma1p6d" path="res://Scripts/the_pond.gd" id="1_6vshc"]
 [ext_resource type="Texture2D" uid="uid://crqc2wx2gg5ya" path="res://FishAssets/1BITLake.png" id="1_jl2p6"]
@@ -11,6 +11,62 @@
 [ext_resource type="Script" uid="uid://byd4v6ck6hx2i" path="res://Scripts/fish_pond.gd" id="8_eggdi"]
 [ext_resource type="Texture2D" uid="uid://8qmjujvxxxbb" path="res://FishAssets/UI_Elements/UI.png" id="9_ymm6u"]
 [ext_resource type="Script" uid="uid://cv6w05touw1il" path="res://Scripts/ui_boxes.gd" id="10_4kvya"]
+[ext_resource type="Texture2D" uid="uid://bduemw41qxcf8" path="res://FishAssets/JunkAssets + Player/PlayerBits/HeadIdle1.png" id="12_32kq0"]
+[ext_resource type="Texture2D" uid="uid://w3hcb5nsxedo" path="res://FishPile/FishImgs/angler_fish.png" id="12_qf8xc"]
+[ext_resource type="Texture2D" uid="uid://rehrbn4bgv1n" path="res://FishAssets/JunkAssets + Player/PlayerBits/HeadIdle2.png" id="13_d61c0"]
+[ext_resource type="Texture2D" uid="uid://xg8txnphpe3u" path="res://FishPile/FishImgs/big_fish_boss.png" id="13_f7ag4"]
+[ext_resource type="Texture2D" uid="uid://cef34jtk6u8th" path="res://FishAssets/JunkAssets + Player/PlayerBits/HeadIdle3.png" id="14_ncghf"]
+[ext_resource type="Texture2D" uid="uid://chyxxjsa74c5q" path="res://FishPile/FishImgs/blahaj.png" id="14_wehlu"]
+[ext_resource type="Texture2D" uid="uid://cj1b1t4jl2li0" path="res://FishAssets/JunkAssets + Player/PlayerBits/HeadIdle4.png" id="15_aeft6"]
+[ext_resource type="Texture2D" uid="uid://choq55j8ol70a" path="res://FishPile/FishImgs/blooper.png" id="15_okmeb"]
+[ext_resource type="Texture2D" uid="uid://du1eocsrmfkcl" path="res://FishPile/FishImgs/bread.png" id="16_658wk"]
+[ext_resource type="Texture2D" uid="uid://ftn003kdxejw" path="res://FishAssets/JunkAssets + Player/PlayerBits/HeadIdle5.png" id="16_orcg8"]
+[ext_resource type="Texture2D" uid="uid://brc1312rbkbyj" path="res://FishPile/FishImgs/bryson.png" id="17_cllsq"]
+[ext_resource type="Texture2D" uid="uid://bqvsso8qnxppc" path="res://FishPile/FishImgs/clownfish.png" id="18_1mdsc"]
+[ext_resource type="Texture2D" uid="uid://bl6bks2okh52p" path="res://FishPile/FishImgs/cod.png" id="19_b5o4w"]
+[ext_resource type="Texture2D" uid="uid://6a2unbdst5hc" path="res://FishPile/FishImgs/cool_fish.png" id="20_slnyt"]
+[ext_resource type="Texture2D" uid="uid://bfhj83ew4grox" path="res://FishPile/FishImgs/crab.png" id="21_t7s4c"]
+[ext_resource type="Texture2D" uid="uid://dv88fwph25p5y" path="res://FishPile/FishImgs/creature_from_the_black_lagoon.png" id="22_fdiei"]
+[ext_resource type="Texture2D" uid="uid://fkttym2p1vnk" path="res://FishPile/FishImgs/dev_fish.png" id="23_lyiwd"]
+[ext_resource type="Texture2D" uid="uid://df8kdafdttsdk" path="res://FishAssets/JunkAssets + Player/FeeshBits/Feesh1.png" id="24_7kb8k"]
+[ext_resource type="Texture2D" uid="uid://cxlg54ujvq1ea" path="res://FishPile/FishImgs/fish_2.png" id="25_nce3q"]
+[ext_resource type="Texture2D" uid="uid://b0tm0jcy2qimv" path="res://FishPile/FishImgs/fisherman.png" id="26_32kq0"]
+[ext_resource type="Texture2D" uid="uid://dn2wmg7cvqc1p" path="res://FishPile/FishImgs/halibut.png" id="27_d61c0"]
+[ext_resource type="Texture2D" uid="uid://dc4q1yrcv8pqv" path="res://FishPile/FishImgs/invisifish.png" id="28_ncghf"]
+[ext_resource type="Texture2D" uid="uid://cuj3r6n8fp6mj" path="res://FishPile/FishImgs/john_dory.png" id="29_aeft6"]
+[ext_resource type="Texture2D" uid="uid://c8tlaoqu7tbop" path="res://FishPile/FishImgs/pinko.png" id="35_undie"]
+[ext_resource type="Texture2D" uid="uid://c0xjil8k0ig0e" path="res://FishPile/FishImgs/pufferfish.png" id="36_mpoju"]
+[ext_resource type="Texture2D" uid="uid://c4wnp2j6jh2mq" path="res://FishPile/FishImgs/rainbow_trout.png" id="37_d61c0"]
+[ext_resource type="Texture2D" uid="uid://bxrom7bgoihtm" path="res://FishPile/FishImgs/rat_boy_genius.png" id="37_xmpym"]
+[ext_resource type="Texture2D" uid="uid://pet3ab3ctn4u" path="res://FishPile/FishImgs/sea_bass.png" id="38_35yh2"]
+[ext_resource type="Texture2D" uid="uid://duin6y5vi2d6c" path="res://FishPile/FishImgs/shiny_magikarp.png" id="39_5ihep"]
+[ext_resource type="Texture2D" uid="uid://bchg354pyabb" path="res://FishPile/FishImgs/skrimp.png" id="40_mxopo"]
+[ext_resource type="Texture2D" uid="uid://cgo7iubxsh0p7" path="res://FishAssets/UI_Elements/shopboy1.png" id="41_6vp8y"]
+[ext_resource type="Texture2D" uid="uid://bdrrwxdt8k5up" path="res://FishPile/FishImgs/the_looker.png" id="41_15yar"]
+[ext_resource type="Texture2D" uid="uid://m8pdb6ym51h7" path="res://FishPile/FishImgs/this_guy.png" id="42_6vp8y"]
+[ext_resource type="Texture2D" uid="uid://i4ck5pcdnik8" path="res://FishAssets/UI_Elements/shopboy2.png" id="42_gr0d4"]
+[ext_resource type="Texture2D" uid="uid://dpd5i7thkcsih" path="res://FishPile/FishImgs/unfathomable_horror.png" id="43_gr0d4"]
+[ext_resource type="Texture2D" uid="uid://cbgbgr3gl1jn3" path="res://FishAssets/UI_Elements/shopboy3.png" id="43_qrpb8"]
+[ext_resource type="Texture2D" uid="uid://cq8eyfdve3jgn" path="res://FishAssets/UI_Elements/shopboy4.png" id="44_ad1tr"]
+[ext_resource type="Texture2D" uid="uid://d2yrcvtuxsndq" path="res://FishAssets/UI_Elements/Cursor1.png" id="45_xmpym"]
+[ext_resource type="Texture2D" uid="uid://d0mm5kaknwwth" path="res://FishAssets/UI_Elements/Cursor2.png" id="46_35yh2"]
+[ext_resource type="Texture2D" uid="uid://oy8gyeoqwlbg" path="res://FishAssets/UI_Elements/Cursor3.png" id="47_5ihep"]
+[ext_resource type="Texture2D" uid="uid://bygc8xfn6h8dw" path="res://FishAssets/UI_Elements/Cursor4.png" id="48_mxopo"]
+[ext_resource type="Texture2D" uid="uid://tvhmr3mhvyt8" path="res://FishAssets/UI_Elements/Cursor5.png" id="49_15yar"]
+[ext_resource type="Texture2D" uid="uid://b2386ath13fq3" path="res://FishAssets/UI_Elements/Cursor6.png" id="50_6vp8y"]
+[ext_resource type="Script" uid="uid://bv4nteq0c2i3j" path="res://Scripts/shop_zone.gd" id="51_35yh2"]
+[ext_resource type="Script" uid="uid://cc47n6xddjuhp" path="res://Scripts/leave_zone.gd" id="56_gr0d4"]
+[ext_resource type="Texture2D" uid="uid://d16pgmvpfou5p" path="res://FishAssets/UI_Elements/FishPendiumClosed.png" id="57_ad1tr"]
+[ext_resource type="Texture2D" uid="uid://bsrwk1xu32uga" path="res://FishAssets/UI_Elements/FishPendium.png" id="58_ke7uo"]
+[ext_resource type="Texture2D" uid="uid://jmafqnappbes" path="res://FishAssets/UI_Elements/FishPendium1.png" id="59_ct5rc"]
+[ext_resource type="Texture2D" uid="uid://cmttfp6h47jg3" path="res://FishAssets/UI_Elements/FishPendium2.png" id="60_wfufk"]
+[ext_resource type="Texture2D" uid="uid://b4x5tm5v84s2w" path="res://FishAssets/UI_Elements/FishPendium3.png" id="61_vcvwv"]
+[ext_resource type="Texture2D" uid="uid://b676yx7hhgdsl" path="res://FishAssets/UI_Elements/FishPendium4.png" id="62_yof2e"]
+[ext_resource type="Texture2D" uid="uid://b2acaxfrt33wo" path="res://FishAssets/UI_Elements/FishPendium5.png" id="63_vk4f2"]
+[ext_resource type="Texture2D" uid="uid://fwnq7e2b82ia" path="res://FishAssets/UI_Elements/FishPendium6.png" id="64_a6nei"]
+[ext_resource type="Texture2D" uid="uid://dcillegkskw6f" path="res://FishAssets/UI_Elements/FishPendium7.png" id="65_787io"]
+[ext_resource type="Texture2D" uid="uid://dq0fyb442f5ju" path="res://FishAssets/UI_Elements/FishPendium8.png" id="66_6xitt"]
+[ext_resource type="Script" uid="uid://bhtxdwncx4pqp" path="res://Scripts/fishpendium.gd" id="67_wfufk"]
 
 [sub_resource type="Curve2D" id="Curve2D_6vshc"]
 _data = {
@@ -39,7 +95,300 @@ a = Vector2(4, 847)
 b = Vector2(5, 1042)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ymm6u"]
-size = Vector2(42, 27)
+size = Vector2(92, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_orcg8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_32kq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d61c0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ncghf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_aeft6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_orcg8")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_qf8xc")
+}],
+"loop": true,
+"name": &"angler fish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_f7ag4")
+}],
+"loop": true,
+"name": &"big fish boss",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_wehlu")
+}],
+"loop": true,
+"name": &"blahaj",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_okmeb")
+}],
+"loop": true,
+"name": &"blooper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_658wk")
+}],
+"loop": true,
+"name": &"bread",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_cllsq")
+}],
+"loop": true,
+"name": &"bryson",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_1mdsc")
+}],
+"loop": true,
+"name": &"clownfish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_b5o4w")
+}],
+"loop": true,
+"name": &"cod",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_slnyt")
+}],
+"loop": true,
+"name": &"cool fish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_t7s4c")
+}],
+"loop": true,
+"name": &"crab",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_fdiei")
+}],
+"loop": true,
+"name": &"creature (black lagoon)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_lyiwd")
+}],
+"loop": true,
+"name": &"dev fish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_7kb8k")
+}],
+"loop": true,
+"name": &"fish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_nce3q")
+}],
+"loop": true,
+"name": &"fish 2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_32kq0")
+}],
+"loop": true,
+"name": &"fisherman",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_d61c0")
+}],
+"loop": true,
+"name": &"halibut",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_ncghf")
+}],
+"loop": true,
+"name": &"invisifish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_aeft6")
+}],
+"loop": true,
+"name": &"john dory",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_undie")
+}],
+"loop": true,
+"name": &"pinko",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_mpoju")
+}],
+"loop": true,
+"name": &"pufferfish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_d61c0")
+}],
+"loop": true,
+"name": &"rainbow trout",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_xmpym")
+}],
+"loop": true,
+"name": &"rat boy genius",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_35yh2")
+}],
+"loop": true,
+"name": &"sea bass",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_5ihep")
+}],
+"loop": true,
+"name": &"shiny magikarp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_6vp8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_6vp8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_gr0d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_qrpb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ad1tr")
+}],
+"loop": true,
+"name": &"shopboy",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_mxopo")
+}],
+"loop": true,
+"name": &"skrimp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_15yar")
+}],
+"loop": true,
+"name": &"the looker",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_6vp8y")
+}],
+"loop": true,
+"name": &"this guy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_gr0d4")
+}],
+"loop": true,
+"name": &"unfathomable horror",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gr0d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_xmpym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_35yh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_5ihep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_mxopo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_15yar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_6vp8y")
+}],
+"loop": true,
+"name": &"cursor",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mc08"]
 size = Vector2(1726.5, 111)
@@ -58,9 +407,57 @@ point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_c2ewf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1901, 981, 0, 0, 0, 0, 1690, 999, 0, 0, 0, 0, 1551, 994, 0, 0, 0, 0, 1396, 1001, 0, 0, 0, 0, 1231, 997, 0, 0, 0, 0, 1063, 982, 0, 0, 0, 0, 973, 1004)
+"points": PackedVector2Array(0, 0, 0, 0, 1901, 981, 0, 0, 0, 0, 1690, 1016, 0, 0, 0, 0, 1660, 988, 0, 0, 0, 0, 1540, 1025, 0, 0, 0, 0, 1384, 991, 0, 0, 0, 0, 1236, 1009, 0, 0, 0, 0, 1063, 982, 0, 0, 0, 0, 881, 1005)
 }
-point_count = 7
+point_count = 8
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrpb8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_ad1tr")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58_ke7uo")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_ct5rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_wfufk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_vcvwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_yof2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_vk4f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_a6nei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_787io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_6xitt")
+}],
+"loop": false,
+"name": &"shutter",
+"speed": 20.0
+}]
 
 [node name="The Pond" type="Node2D"]
 z_as_relative = false
@@ -70,7 +467,7 @@ script = ExtResource("1_6vshc")
 [node name="Player" parent="." instance=ExtResource("3_tuf3c")]
 unique_name_in_owner = true
 z_index = 2
-position = Vector2(790, 869)
+position = Vector2(15, 932)
 
 [node name="FishGo" type="Marker2D" parent="Player"]
 unique_name_in_owner = true
@@ -140,6 +537,7 @@ autostart = true
 script = ExtResource("7_r3lch")
 
 [node name="DockBits" type="StaticBody2D" parent="."]
+position = Vector2(-83, 3)
 
 [node name="Dock" type="Sprite2D" parent="DockBits"]
 modulate = Color(0.340339, 0.340339, 0.340339, 1)
@@ -153,11 +551,11 @@ position = Vector2(1, 29)
 polygon = PackedVector2Array(-227, 950, 905, 947, 911, 959, -229, 961)
 
 [node name="CastLine" type="CollisionShape2D" parent="DockBits"]
-position = Vector2(-8, -1)
+position = Vector2(12, -10)
 shape = SubResource("SegmentShape2D_q5amn")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DockBits"]
-position = Vector2(-217, -7)
+position = Vector2(-21, -34)
 shape = SubResource("SegmentShape2D_r3lch")
 
 [node name="DockLegs" type="Sprite2D" parent="DockBits"]
@@ -168,12 +566,13 @@ texture = ExtResource("5_q5amn")
 
 [node name="CastZone" type="Area2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(-23, -3)
 script = ExtResource("7_eggdi")
 
 [node name="CastingCheck" type="CollisionShape2D" parent="CastZone"]
 unique_name_in_owner = true
 z_as_relative = false
-position = Vector2(806, 960)
+position = Vector2(736, 959)
 shape = SubResource("RectangleShape2D_ymm6u")
 
 [node name="CastPrompt" type="Label" parent="CastZone"]
@@ -187,7 +586,7 @@ offset_bottom = 853.0
 theme_override_colors/font_color = Color(0.925353, 0.925353, 0.925353, 1)
 theme_override_fonts/font = ExtResource("8_1mc08")
 theme_override_font_sizes/font_size = 25
-text = "[ Space = Cast ]"
+text = "[Space = Cast]"
 horizontal_alignment = 1
 uppercase = true
 
@@ -200,7 +599,7 @@ unique_name_in_owner = true
 top_level = true
 z_index = 100
 z_as_relative = false
-position = Vector2(684, 207)
+position = Vector2(674, 207)
 scale = Vector2(0.809211, 0.745552)
 texture = ExtResource("9_ymm6u")
 script = ExtResource("10_4kvya")
@@ -239,6 +638,23 @@ text = " Idle"
 autowrap_mode = 3
 uppercase = true
 
+[node name="Port" type="AnimatedSprite2D" parent="UiBoxes"]
+unique_name_in_owner = true
+position = Vector2(-451.057, 13.413)
+scale = Vector2(3.76321, 3.57029)
+sprite_frames = SubResource("SpriteFrames_orcg8")
+animation = &"shopboy"
+autoplay = "IDLE"
+frame_progress = 0.146986
+
+[node name="Cursor" type="AnimatedSprite2D" parent="UiBoxes"]
+visible = false
+position = Vector2(682.146, -210.582)
+sprite_frames = SubResource("SpriteFrames_gr0d4")
+animation = &"cursor"
+autoplay = "cursor"
+frame_progress = 0.465239
+
 [node name="FishHouse" type="Area2D" parent="."]
 unique_name_in_owner = true
 
@@ -273,9 +689,67 @@ curve = SubResource("Curve2D_c2ewf")
 [node name="Bob" type="PathFollow2D" parent="BobberSpots"]
 unique_name_in_owner = true
 position = Vector2(1901, 981)
-rotation = 3.05649
+rotation = 2.97721
+
+[node name="ShopZone" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-659, -8)
+script = ExtResource("51_35yh2")
+
+[node name="ShopCheck" type="CollisionShape2D" parent="ShopZone"]
+z_as_relative = false
+position = Vector2(891, 960)
+shape = SubResource("RectangleShape2D_ymm6u")
+
+[node name="ShopPrompt" type="Label" parent="ShopZone"]
+unique_name_in_owner = true
+z_index = 100
+z_as_relative = false
+offset_left = 908.0
+offset_top = 814.0
+offset_right = 1157.0
+offset_bottom = 837.0
+theme_override_colors/font_color = Color(0.925353, 0.925353, 0.925353, 1)
+theme_override_fonts/font = ExtResource("8_1mc08")
+theme_override_font_sizes/font_size = 25
+text = "[Space = Enter]"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="LeaveZone" type="Area2D" parent="."]
+position = Vector2(-905, 3)
+script = ExtResource("56_gr0d4")
+
+[node name="LeaveCheck" type="CollisionShape2D" parent="LeaveZone"]
+z_as_relative = false
+position = Vector2(853, 956)
+shape = SubResource("RectangleShape2D_ymm6u")
+
+[node name="LeavePrompt" type="Label" parent="LeaveZone"]
+unique_name_in_owner = true
+z_index = 100
+z_as_relative = false
+offset_left = 908.0
+offset_top = 810.0
+offset_right = 1157.0
+offset_bottom = 833.0
+theme_override_colors/font_color = Color(0.925353, 0.925353, 0.925353, 1)
+theme_override_fonts/font = ExtResource("8_1mc08")
+theme_override_font_sizes/font_size = 25
+text = "[Space = Leave]"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Fishpendium" type="AnimatedSprite2D" parent="."]
+position = Vector2(1582, 267)
+sprite_frames = SubResource("SpriteFrames_qrpb8")
+animation = &"closed"
+autoplay = "closed"
+script = ExtResource("67_wfufk")
 
 [connection signal="cast" from="Player" to="UiBoxes" method="_on_player_cast"]
+[connection signal="out" from="Player" to="UiBoxes" method="_on_player_out"]
+[connection signal="shop" from="Player" to="UiBoxes" method="_on_player_shop"]
 [connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
 [connection signal="timeout" from="BirdLogic/BirdTimer" to="." method="_on_bird_timer_timeout"]
 [connection signal="timeout" from="BirdLogic/BirdTimer" to="BirdLogic/BirdTimer" method="_on_timeout"]
@@ -283,3 +757,8 @@ rotation = 3.05649
 [connection signal="body_exited" from="CastZone" to="CastZone" method="_on_body_exited"]
 [connection signal="cast_ready" from="CastZone" to="Player" method="_on_cast_zone_cast_ready"]
 [connection signal="done" from="UiBoxes" to="Player" method="_on_ui_boxes_done"]
+[connection signal="body_entered" from="ShopZone" to="ShopZone" method="_on_body_entered"]
+[connection signal="body_exited" from="ShopZone" to="ShopZone" method="_on_body_exited"]
+[connection signal="shop_ready" from="ShopZone" to="Player" method="_on_shop_zone_shop_ready"]
+[connection signal="body_entered" from="LeaveZone" to="LeaveZone" method="_on_body_entered"]
+[connection signal="body_exited" from="LeaveZone" to="LeaveZone" method="_on_body_exited"]
