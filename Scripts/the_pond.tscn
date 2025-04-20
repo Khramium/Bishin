@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://bixew7r13bc65"]
+[gd_scene load_steps=94 format=3 uid="uid://bixew7r13bc65"]
 
 [ext_resource type="Script" uid="uid://dx35i5pma1p6d" path="res://Scripts/the_pond.gd" id="1_6vshc"]
 [ext_resource type="Texture2D" uid="uid://crqc2wx2gg5ya" path="res://FishAssets/1BITLake.png" id="1_jl2p6"]
@@ -72,6 +72,14 @@
 [ext_resource type="Texture2D" uid="uid://dq0fyb442f5ju" path="res://FishAssets/UI_Elements/FishPendium8.png" id="66_6xitt"]
 [ext_resource type="Texture2D" uid="uid://brbk56enjinac" path="res://FishAssets/UI_Elements/FishPendiumShopClosed10.png" id="66_ujumf"]
 [ext_resource type="Script" uid="uid://bhtxdwncx4pqp" path="res://Scripts/fishpendium.gd" id="67_wfufk"]
+[ext_resource type="Script" uid="uid://bhrjjovq4tmh5" path="res://Scripts/save_stuff.gd" id="73_6xitt"]
+[ext_resource type="AudioStream" uid="uid://bhparmr0aqjl1" path="res://sounds/newfish.wav" id="74_xjvpd"]
+[ext_resource type="AudioStream" uid="uid://cu2q3nphrr8cr" path="res://sounds/blipSelect.wav" id="75_gxdue"]
+[ext_resource type="AudioStream" uid="uid://yl8x7nlfivc1" path="res://sounds/cast.wav" id="76_1jxbr"]
+[ext_resource type="AudioStream" uid="uid://gg77cxmg2a10" path="res://sounds/catch.wav" id="77_ujumf"]
+[ext_resource type="AudioStream" uid="uid://nsek8undtkam" path="res://sounds/kawaii-kitsune-kevin-macleod-main-version-7984-04-02.mp3" id="78_p5ovb"]
+[ext_resource type="AudioStream" uid="uid://xivrxv1aaoub" path="res://sounds/shwoop.wav" id="79_vwws1"]
+[ext_resource type="AudioStream" uid="uid://cl370ph5fbxrb" path="res://sounds/poowhs.wav" id="80_qwnjp"]
 
 [sub_resource type="Curve2D" id="Curve2D_6vshc"]
 _data = {
@@ -495,7 +503,7 @@ script = ExtResource("1_6vshc")
 [node name="Player" parent="." instance=ExtResource("3_tuf3c")]
 unique_name_in_owner = true
 z_index = 2
-position = Vector2(15, 932)
+position = Vector2(113, 945)
 
 [node name="FishGo" type="Marker2D" parent="Player"]
 unique_name_in_owner = true
@@ -519,7 +527,7 @@ unique_name_in_owner = true
 layer = -58
 
 [node name="1bitLake" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(960, 540)
+position = Vector2(960, 541)
 texture = ExtResource("1_jl2p6")
 
 [node name="WaveAndFish" type="Path2D" parent="."]
@@ -574,7 +582,7 @@ position = Vector2(471, 1013)
 texture = ExtResource("6_q5amn")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DockBits"]
-visible = false
+z_index = 10
 position = Vector2(1, 29)
 polygon = PackedVector2Array(-227, 950, 905, 947, 911, 959, -229, 961)
 
@@ -856,6 +864,65 @@ autoplay = "cursor"
 frame_progress = 0.828449
 script = ExtResource("50_787io")
 
+[node name="SaveStuff" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("73_6xitt")
+
+[node name="NewFish" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 1000
+offset_left = 157.0
+offset_top = 23.0
+offset_right = 445.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("8_1mc08")
+theme_override_font_sizes/font_size = 35
+text = "!! NEW FISH !!"
+
+[node name="NewFishSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("74_xjvpd")
+volume_db = -12.235
+bus = &"SFX"
+
+[node name="UISound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("75_gxdue")
+volume_db = -6.182
+pitch_scale = 1.48
+bus = &"SFX"
+
+[node name="CastSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("76_1jxbr")
+volume_db = -8.565
+bus = &"SFX"
+
+[node name="CatchSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("77_ujumf")
+volume_db = -4.894
+bus = &"SFX"
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("78_p5ovb")
+volume_db = -15.941
+bus = &"Music"
+
+[node name="Shwoop" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("79_vwws1")
+volume_db = -6.118
+bus = &"SFX"
+
+[node name="Poowhs" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("80_qwnjp")
+volume_db = -6.118
+bus = &"SFX"
+
 [connection signal="cast" from="Player" to="UiBoxes" method="_on_player_cast"]
 [connection signal="out" from="Player" to="UiBoxes" method="_on_player_out"]
 [connection signal="shop" from="Player" to="UiBoxes" method="_on_player_shop"]
@@ -866,6 +933,7 @@ script = ExtResource("50_787io")
 [connection signal="body_exited" from="CastZone" to="CastZone" method="_on_body_exited"]
 [connection signal="cast_ready" from="CastZone" to="Player" method="_on_cast_zone_cast_ready"]
 [connection signal="done" from="UiBoxes" to="Player" method="_on_ui_boxes_done"]
+[connection signal="done" from="UiBoxes" to="StaticBody2D/Fishpendium" method="_on_ui_boxes_done"]
 [connection signal="in_shop" from="UiBoxes" to="StaticBody2D/Fishpendium" method="_on_ui_boxes_in_shop"]
 [connection signal="out_shop" from="UiBoxes" to="StaticBody2D/Fishpendium" method="_on_ui_boxes_out_shop"]
 [connection signal="body_entered" from="ShopZone" to="ShopZone" method="_on_body_entered"]

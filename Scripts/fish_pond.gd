@@ -4,9 +4,12 @@ var fish_data = []
 var pond = []
 var fishcount = 15
 
+# Mashing in shop breaks text
+
 func _ready():
 	_load_fish_data()
 	_fill_pond(fishcount)
+	%Fishpendium.save = %SaveStuff.load_save()
 	
 	
 func _load_fish_data():

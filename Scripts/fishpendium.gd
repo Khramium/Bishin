@@ -6,10 +6,12 @@ var page3fix = false
 var is_changing_page = false
 var inshop = false
 var toggle = false
+var save = {}
 
 signal opened
 signal closed
 signal cursormode
+
 
 func _process(delta):
 	if %Fishpendium.is_playing(): return
@@ -23,6 +25,7 @@ func _process(delta):
 	_unroll()
 	if open:
 		if Input.is_action_just_pressed("menu_right") and page <= 2 and not is_changing_page:
+			%UISound.play()
 			is_changing_page = true
 			page += 1
 			if page == 3:
@@ -32,6 +35,7 @@ func _process(delta):
 			await get_tree().create_timer(0.5).timeout
 			is_changing_page = false
 		if Input.is_action_just_pressed("menu_left") and page >= 2 and not is_changing_page:
+			%UISound.play()
 			page3fix = false
 			is_changing_page = true
 			page -= 1
@@ -44,6 +48,7 @@ func _process(delta):
 func _unroll():
 	if (Input.is_action_just_pressed("info") and open == false) and not is_changing_page:
 		is_changing_page = true
+		%Shwoop.play()
 		%Fishpendium.play("shutter")
 		open = true
 		await _erase_header()
@@ -63,6 +68,7 @@ func _unroll():
 func _roll():
 	if ((Input.is_action_just_pressed("info") and open == true) or toggle) and not is_changing_page:
 		is_changing_page = true
+		%Poowhs.play()
 		toggle = false
 		%Fishpendium.play_backwards("shutter")
 		open = false
@@ -92,15 +98,23 @@ func _erase_header():
 func _write_fishpendium():
 	var page_fish = []
 	if page == 1:
-		page_fish = ["Fish", "Sea Bass", "Clownfish", "Cod", "Pinko",
-		 "Rainbow Trout", "Bread", "Halibut", "Skrimp", "Blahaj"]
+		page_fish = ["FISH", "SEA BASS", "CLOWNFISH", "COD", "PINKO",
+			"RAINBOW TROUT", "BREAD", "HALIBUT", "SKRIMP", "BLAHAJ"]
 	elif page == 2:
-		page_fish = ["Crab", "John Dory", "Pufferfish", "Cool Fish", "Bryson",
-		 "Creature", "Angler Fish", "Rat Boy Genius", "Blooper", "This Guy"]
+		page_fish = ["CRAB", "JOHN DORY", "PUFFERFISH", "COOL FISH", "BRYSON",
+			"CREATURE", "ANGLER FISH", "RAT BOY GENIUS", "BLOOPER", "THIS GUY"]
 	else:
-		page_fish = ["Fisherman", "Big Fish Boss", "Unfathomable Horror", "Dev Fish", "Invisifish",
-		 "Old Boot", "The Looker"]
-	populate_lists(page_fish)
+		page_fish = ["FISH 2", "FISHERMAN", "BIG FISH BOSS", "UNFATHOMABLE HORROR", "DEV FISH",
+			"INVISIFISH", "OLD BOOT", "THE LOOKER"]
+	var i = 0
+	var new_page_fish = page_fish.duplicate()
+	
+	for guy in range (page_fish.size()):
+		var fish = page_fish[guy]
+		if not save[fish]:
+			new_page_fish[i] = "???"
+		i += 1
+	populate_lists(new_page_fish)
 	
 
 func populate_lists(known_fish):
@@ -167,4 +181,9 @@ func _on_ui_boxes_out_shop():
 	page = 1
 	await _unroll()
 	await get_tree().create_timer(0.2).timeout
-	%Activity.text = " idle"
+	%Activity.text = " idle "
+
+
+func _on_ui_boxes_done():
+	if open:
+		_write_fishpendium()

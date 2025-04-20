@@ -10,10 +10,9 @@ func _ready() -> void:
 	%LeavePrompt.visible = false
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if body_inside:
-		emit_signal("leave_ready")
+	if body_inside and Input.is_action_just_pressed("ui_accept"):
+		get_tree().change_scene_to_file("res://menu.tscn")
 
 func reset():
 	%LeavePrompt.visible = true

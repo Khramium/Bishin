@@ -38,7 +38,7 @@ func _on_body_exited(body):
 	%UiBoxes._erase_text(%Line2, 0.01)
 	if %Activity.text != " Idle":
 		await %UiBoxes._erase_text(%Activity, 0.01)
-		await %UiBoxes._type_text(" Idle", %Activity)
+		await %UiBoxes._type_text(" Idle ", %Activity)
 	%Port.play("IDLE")
 
 

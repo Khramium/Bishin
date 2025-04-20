@@ -6,6 +6,7 @@ var canmove = true
 var busy = false
 var line_wobble_time := 0.0
 var exitable = true
+var can_exit = false
 
 signal cast
 signal shop
@@ -92,22 +93,31 @@ func _update_fishing_line():
 		line.add_point(line.to_local(pos))
 
 func _enter():
+	await get_tree().create_timer(0.3).timeout
 	if Input.is_action_just_pressed("ui_accept"):
+		await get_tree().create_timer(0.1).timeout
+		if busy:
+			return
+		busy = true
 		emit_signal("shop")
 		await get_tree().create_timer(0.1).timeout
 		%Port.play("shopboy")
 		%Player.visible = false
-		busy = true
 		%ShopPrompt.visible = false
+		can_exit = true
 
 func _leave():
-	# This will be a UI button later
-	if Input.is_action_just_pressed("ui_accept") and exitable:
-		emit_signal("out")
-		%Port.play("IDLE")
-		sprite.flip_h = false
-		%Player.visible = true
-		busy = false
+	await get_tree().create_timer(0.3).timeout
+	if Input.is_action_just_pressed("ui_accept") and exitable and can_exit:
+		await get_tree().create_timer(0.1).timeout
+		if busy:
+			emit_signal("out")
+			%Port.play("IDLE")
+			sprite.flip_h = false
+			%Player.visible = true
+			await get_tree().create_timer(0.5).timeout
+			busy = false
+			can_exit = false
 
 func _on_shop_zone_shop_ready():
 	if not busy:

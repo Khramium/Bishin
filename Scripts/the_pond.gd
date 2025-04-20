@@ -50,6 +50,7 @@ func spawn_fish(fname, quip, zone):
 
 	
 func _ready():
+	%BGM.play()
 	var count = 13
 	var progress = 0.0
 	var progressA = 1.0 / count
