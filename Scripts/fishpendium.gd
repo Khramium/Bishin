@@ -88,7 +88,6 @@ func _roll():
 func _type_text(zone, text, speed):
 	for i in text.length():
 		zone.text += text[i]
-		await get_tree().create_timer(speed).timeout
 
 func _erase_header():
 	while $Header.text.length() > 19:
@@ -133,6 +132,7 @@ func populate_lists(known_fish):
 func _type_list(list_node, items, side):
 	list_node.text = ""
 	var j = 0
+	await get_tree().create_timer(0.1).timeout
 	if side == false:
 		if page == 2:
 			j += 10
@@ -140,7 +140,7 @@ func _type_list(list_node, items, side):
 			j += 20
 		for i in range(items.size()):
 			j += 1
-			await _type_text(list_node, str(j) + ". " + items[i] + "\n\n", 0.001)
+			await _type_text(list_node, str(j) + ". " + items[i] + "\n\n", 0.01)
 	if side == true:
 		j += 5
 		if page == 2:

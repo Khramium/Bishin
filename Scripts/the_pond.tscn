@@ -802,11 +802,6 @@ offset_right = -9.0
 offset_bottom = 155.0
 theme_override_fonts/font = ExtResource("8_1mc08")
 theme_override_font_sizes/font_size = 32
-text = "#.
-
-#.
-
-#."
 autowrap_mode = 3
 uppercase = true
 
@@ -818,11 +813,6 @@ offset_right = 315.0
 offset_bottom = 149.0
 theme_override_fonts/font = ExtResource("8_1mc08")
 theme_override_font_sizes/font_size = 32
-text = "#. ?
-
-#.
-
-#."
 autowrap_mode = 3
 uppercase = true
 
