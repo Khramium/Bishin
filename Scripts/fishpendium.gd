@@ -140,7 +140,7 @@ func _type_list(list_node, items, side):
 			j += 20
 		for i in range(items.size()):
 			j += 1
-			await _type_text(list_node, str(j) + ". " + items[i] + "\n\n", 0.01)
+			await _type_text(list_node, str(j) + ". " + items[i] + "\n\n", 0.001)
 	if side == true:
 		j += 5
 		if page == 2:

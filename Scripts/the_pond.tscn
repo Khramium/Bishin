@@ -217,7 +217,7 @@ animations = [{
 "texture": ExtResource("22_fdiei")
 }],
 "loop": true,
-"name": &"creature (black lagoon)",
+"name": &"creature",
 "speed": 5.0
 }, {
 "frames": [{
@@ -679,9 +679,8 @@ unique_name_in_owner = true
 position = Vector2(-451.057, 13.413)
 scale = Vector2(3.76321, 3.57029)
 sprite_frames = SubResource("SpriteFrames_orcg8")
-animation = &"IDLE"
+animation = &"bread"
 autoplay = "IDLE"
-frame_progress = 0.680943
 
 [node name="FishHouse" type="Area2D" parent="."]
 unique_name_in_owner = true

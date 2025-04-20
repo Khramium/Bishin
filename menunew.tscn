@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d22ex8he6fs3s"]
+[gd_scene load_steps=7 format=3 uid="uid://dbr81h4h7bfos"]
 
-[ext_resource type="FontFile" uid="uid://bf8xfmj6g7afo" path="res://FishAssets/UI_Elements/VCR_OSD_MONO_1.001.ttf" id="1_lti8b"]
-[ext_resource type="Script" uid="uid://y1pe2okb24ao" path="res://menu.gd" id="1_mae5d"]
-[ext_resource type="Texture2D" uid="uid://b37bhsp6vrgj1" path="res://FishAssets/Bishin_Menu_clean.png" id="2_ouk20"]
-[ext_resource type="PackedScene" uid="uid://xprygjutfv7d" path="res://h_slider.tscn" id="4_4hy44"]
-[ext_resource type="AudioStream" uid="uid://cu2q3nphrr8cr" path="res://sounds/blipSelect.wav" id="5_l48gv"]
-[ext_resource type="AudioStream" uid="uid://nsek8undtkam" path="res://sounds/kawaii-kitsune-kevin-macleod-main-version-7984-04-02.mp3" id="6_ecwwl"]
+[ext_resource type="Script" uid="uid://y1pe2okb24ao" path="res://menu.gd" id="1_yrkvn"]
+[ext_resource type="FontFile" uid="uid://bf8xfmj6g7afo" path="res://FishAssets/UI_Elements/VCR_OSD_MONO_1.001.ttf" id="2_yipus"]
+[ext_resource type="Texture2D" uid="uid://b37bhsp6vrgj1" path="res://FishAssets/Bishin_Menu_clean.png" id="3_hkeuc"]
+[ext_resource type="PackedScene" uid="uid://xprygjutfv7d" path="res://h_slider.tscn" id="4_eam2n"]
+[ext_resource type="AudioStream" uid="uid://cu2q3nphrr8cr" path="res://sounds/blipSelect.wav" id="5_e8587"]
+[ext_resource type="AudioStream" uid="uid://nsek8undtkam" path="res://sounds/kawaii-kitsune-kevin-macleod-main-version-7984-04-02.mp3" id="6_7tveu"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_mae5d")
+script = ExtResource("1_yrkvn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -30,13 +30,13 @@ grow_vertical = 0
 [node name="Start Button" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_fonts/font = ExtResource("2_yipus")
 theme_override_font_sizes/font_size = 54
 text = "Go Bishin'"
 
 [node name="Quit Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_fonts/font = ExtResource("2_yipus")
 theme_override_font_sizes/font_size = 54
 text = "Not Today"
 
@@ -44,7 +44,7 @@ text = "Not Today"
 z_index = -1
 position = Vector2(1016, 566)
 scale = Vector2(2, 2)
-texture = ExtResource("2_ouk20")
+texture = ExtResource("3_hkeuc")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -52,7 +52,7 @@ offset_left = 37.0
 offset_top = 171.0
 offset_right = 675.0
 offset_bottom = 254.0
-theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_fonts/font = ExtResource("2_yipus")
 theme_override_font_sizes/font_size = 32
 text = "or: how I learned to stop worrying 
 and simulate some fishing
@@ -71,7 +71,7 @@ offset_left = 139.0
 offset_top = 10.0
 offset_right = 549.0
 offset_bottom = 189.0
-theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_fonts/font = ExtResource("2_yipus")
 theme_override_font_sizes/font_size = 100
 text = "Bishin'
 -------"
@@ -85,45 +85,45 @@ offset_bottom = 723.0
 
 [node name="Label" type="Label" parent="AudioDad"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_fonts/font = ExtResource("2_yipus")
 theme_override_font_sizes/font_size = 25
 text = "Master"
 
-[node name="Master" parent="AudioDad" instance=ExtResource("4_4hy44")]
+[node name="Master" parent="AudioDad" instance=ExtResource("4_eam2n")]
 layout_mode = 2
 bus_name = "Master"
 
 [node name="Label2" type="Label" parent="AudioDad"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_fonts/font = ExtResource("2_yipus")
 theme_override_font_sizes/font_size = 25
 text = "Music
 (quiet on menu)"
 
-[node name="Music" parent="AudioDad" instance=ExtResource("4_4hy44")]
+[node name="Music" parent="AudioDad" instance=ExtResource("4_eam2n")]
 layout_mode = 2
 bus_name = "Music"
 
 [node name="Label3" type="Label" parent="AudioDad"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_lti8b")
+theme_override_fonts/font = ExtResource("2_yipus")
 theme_override_font_sizes/font_size = 25
 text = "SFX"
 
-[node name="SFX" parent="AudioDad" instance=ExtResource("4_4hy44")]
+[node name="SFX" parent="AudioDad" instance=ExtResource("4_eam2n")]
 layout_mode = 2
 bus_name = "SFX"
 
 [node name="UISound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("5_l48gv")
+stream = ExtResource("5_e8587")
 volume_db = -6.182
 pitch_scale = 1.48
 bus = &"SFX"
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("6_ecwwl")
+stream = ExtResource("6_7tveu")
 volume_db = -15.941
 bus = &"Music"
 
